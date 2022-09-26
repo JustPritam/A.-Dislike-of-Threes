@@ -1,0 +1,25 @@
+import java.util.*;
+public class dislikeOfThrees{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        for(int i = 0; i < t; i++){
+            int k = sc.nextInt();
+            for(int j = 1; ; j++){
+                if(j % 3 == 0 || j % 10 == 3)
+                    continue;
+                if(--k == 0){
+                    System.out.println(j);
+                    break;
+                }
+            }        
+        }    
+    }
+}
+
+The solution is simple: let's create an integer variable (initially set to 0) that will contain the number of considered liked integers. 
+Let's iterate over all positive integers starting with 1. 
+Let's increase the variable only when the considered number is liked. 
+If the variable is equal to k, let's stop the iteration and output the last considered number.
+
+Since the answer for k=1000 is x=1666, the count of considered numbers is at most 1666 so the solution will work on the specified limitations fast enough.
